@@ -107,7 +107,7 @@ Instruction | Function description
 `QBZ` | Direct switch to `QBZ` configuration
 `G36C` | Direct switch to `G36C` configuration
 `AKM` | Direct switch to `AKM` configuration
-`Beryl M762` | Direct switch to `Beryl M762` configuration
+`Beryl-M762` | Direct switch to `Beryl-M762` configuration
 `DP-28` | Direct switch to `DP-28` configuration
 
 > You can bind to `G_bind`, triggering instructions using a default combination key

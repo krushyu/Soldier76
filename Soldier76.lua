@@ -73,16 +73,16 @@ userInfo = {
 		},
 		["5.56"] = {
 			-- 枪械             模式         系数        下蹲系数
-			{ "M416",           1,          1,          0.8 }, -- 补偿 + 基础镜 + 直角 + 枪托 + 扩容 | Komp + Reddot + Triangular grip + Gunstock + Mag
 			{ "SCAR-L",         1,          1,          0.8 }, -- 补偿 + 基础镜 + 直角 + 扩容 | Komp + Reddot + Triangular grip + Mag
+			{ "M416",           1,          1,          0.8 }, -- 补偿 + 基础镜 + 直角 + 枪托 + 扩容 | Komp + Reddot + Triangular grip + Gunstock + Mag
 			{ "QBZ",            1,          1,          0.8 }, -- 补偿 + 基础镜 + 直角 + 扩容 | Komp + Reddot + Triangular grip + Mag
 			{ "G36C",           1,          1,          0.8 }, -- 补偿 + 基础镜 + 直角 + 扩容 | Komp + Reddot + Triangular grip + Mag
 			{ "M16A4",          2,          1,          0.8 }, -- 补偿 + 基础镜 + 枪托 + 扩容 | Komp + Reddot + Gunstock + Mag
 		},
 		["7.62"] = {
 			-- 枪械             模式         系数        下蹲系数
+			{ "Beryl-M762",     1,          1,          0.8 }, -- 补偿 + 基础镜 + 直角 + 扩容 | Komp + Reddot + Triangular grip + Mag
 			{ "AKM",            1,          1,          0.8 }, -- 补偿 + 基础镜 + 扩容 | Komp + Reddot + Mag
-			{ "Beryl M762",     1,          1,          0.8 }, -- 补偿 + 基础镜 + 直角 + 扩容 | Komp + Reddot + Triangular grip + Mag
 			{ "DP-28",          0,          1,          0.8 }, -- 基础镜 | Reddot
 		},
 	},
@@ -93,12 +93,12 @@ userInfo = {
 	G_bind = {
 		-- G
 		["G3"] = "",
-		["G4"] = "",
-		["G5"] = "",
-		["G6"] = "5.56",
-		["G7"] = "9mm",
-		["G8"] = "7.62",
-		["G9"] = ".45",
+		["G4"] = "5.56",
+		["G5"] = "7.62",
+		["G6"] = "9mm",
+		["G7"] = "SCAR-L|scopeX2",
+		["G8"] = "Beryl-M762|scopeX2",
+		["G9"] = "scopeX1",
 		["G10"] = "last",
 		["G11"] = "next",
 		-- lalt + G
@@ -106,8 +106,8 @@ userInfo = {
 		["lalt + G4"] = "",
 		["lalt + G5"] = "",
 		["lalt + G6"] = "",
-		["lalt + G7"] = "",
-		["lalt + G8"] = "",
+		["lalt + G7"] = "SCAR-L|scopeX3",
+		["lalt + G8"] = "Beryl-M762|scopeX3",
 		["lalt + G9"] = "",
 		["lalt + G10"] = "",
 		["lalt + G11"] = "",
@@ -116,8 +116,8 @@ userInfo = {
 		["lctrl + G4"] = "",
 		["lctrl + G5"] = "",
 		["lctrl + G6"] = "",
-		["lctrl + G7"] = "",
-		["lctrl + G8"] = "",
+		["lctrl + G7"] = "SCAR-L|scopeX4",
+		["lctrl + G8"] = "Beryl-M762|scopeX4",
 		["lctrl + G9"] = "",
 		["lctrl + G10"] = "",
 		["lctrl + G11"] = "",
@@ -125,12 +125,12 @@ userInfo = {
 		["lshift + G3"] = "",
 		["lshift + G4"] = "",
 		["lshift + G5"] = "",
-		["lshift + G6"] = "fast_pickup",
-		["lshift + G7"] = "",
-		["lshift + G8"] = "",
-		["lshift + G9"] = "",
+		["lshift + G6"] = "fast_lick_box",
+		["lshift + G7"] = "SCAR-L|scopeX6",
+		["lshift + G8"] = "Beryl-M762|scopeX6",
+		["lshift + G9"] = "fast_pickup",
 		["lshift + G10"] = "",
-		["lshift + G11"] = "fast_lick_box",
+		["lshift + G11"] = "",
 		-- ralt + G
 		["ralt + G3"] = "",
 		["ralt + G4"] = "",
@@ -155,7 +155,7 @@ userInfo = {
 		["rshift + G3"] = "",
 		["rshift + G4"] = "",
 		["rshift + G5"] = "",
-		["rshift + G6"] = "fast_discard",
+		["rshift + G6"] = "",
 		["rshift + G7"] = "",
 		["rshift + G8"] = "",
 		["rshift + G9"] = "",
@@ -320,7 +320,7 @@ pubg["SCAR-L"] = function (gunName)
 
 end
 
-pubg["Beryl M762"] = function (gunName)
+pubg["Beryl-M762"] = function (gunName)
 
 	return pubg.execOptions(gunName, {
 		interval = 86,
@@ -949,7 +949,7 @@ function pubg.runCmd (cmd)
 		["G36C"] = pubg.setGun,
 		["M16A4"] = pubg.setGun,
 		["AKM"] = pubg.setGun,
-		["Beryl M762"] = pubg.setGun,
+		["Beryl-M762"] = pubg.setGun,
 		["DP-28"] = pubg.setGun,
 		["first"] = pubg.findInSeries,
 		["next"] = pubg.findInSeries,
